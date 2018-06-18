@@ -11,16 +11,18 @@
 <h1>{{ .Title }}
 
 <table id="myTable" class="display">
-    <tr>
+    <thead>
         <th>Title</th>
         <th>Keywords</th>
-    </tr>
-    {{ range $key, $value := .News }}
-    <tr>
-        <td><a href="{{ $value.Location }}" target="_blank">{{ $key }}</a></td>
-        <td>{{ $value.Keyword }}</td>
-    </tr>
-    {{ end}}
+    </thead>
+    <tbody>
+        {{ range $key, $value := .News }}
+            <tr>
+                <td><a href="{{ $value.Location }}" target="_blank">{{ $key }}</a></td>
+                <td>{{ $value.Keyword }}</td>
+            </tr>
+        {{ end}}
+    </tbody>
 </table>
 
 <script>
